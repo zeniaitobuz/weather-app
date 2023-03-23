@@ -11,7 +11,8 @@ async function getWeatherData(location) {
     alert(response.error.message);
   } else {
     console.log(response.weatherDatabase[0]);
-    var image = document.getElementById("weather-img");
+    let image = document.getElementById("weather-img");
+
     if (
       [
         "mist",
@@ -36,7 +37,7 @@ async function getWeatherData(location) {
 }
 
 document.addEventListener("change", (e) => {
-  var loc = document.getElementById("place-select").value;
+  let loc = document.getElementById("place-select").value;
   if (loc == null || loc == "") {
     document.getElementById("temperature").innerHTML = "0°";
     document.getElementById("feels-like").innerHTML =
@@ -46,8 +47,9 @@ document.addEventListener("change", (e) => {
   }
 });
 
-var select = document.getElementById("place-select");
-var elmts = [
+let select = document.getElementById("place-select");
+
+let elmts = [
   "Kolkata",
   "London",
   "Norway",
@@ -61,9 +63,10 @@ var elmts = [
   "Gujarat",
   "Hyderabad",
 ];
-for (var i = 0; i < elmts.length; i++) {
-  var optn = elmts[i];
-  var el = document.createElement("option");
+
+for (let i = 0; i < elmts.length; i++) {
+  let optn = elmts[i];
+  let el = document.createElement("option");
   el.textContent = optn;
   el.value = optn;
   select.appendChild(el);
